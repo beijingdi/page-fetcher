@@ -1,7 +1,10 @@
 let fs = require('fs');
 let request = require('request');
-let address= process.argv.slice[2];
-let save = process.argv.slice[3];
+let address= process.argv[2];
+let save = process.argv[3];
+console.log(process.argv)
+console.log(address)
+console.log(save)
 const downloadFile = function(address,cb) {
   request(address, (error, response, body) => {
     console.log('error:', error); // Print the error if one occurred
@@ -14,7 +17,7 @@ const downloadFile = function(address,cb) {
 }
 
 const saveFile = (content, save) => {
-  fs.writeFile(path, content, err => {
+  fs.writeFile(save, content, err => {
     if (err) {
       console.error(err);
       return;
