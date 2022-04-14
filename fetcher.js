@@ -2,9 +2,7 @@ let fs = require('fs');
 let request = require('request');
 let address= process.argv[2];
 let save = process.argv[3];
-console.log(process.argv)
-console.log(address)
-console.log(save)
+
 const downloadFile = function(address,cb) {
   request(address, (error, response, body) => {
     console.log('error:', error); // Print the error if one occurred
